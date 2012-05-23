@@ -66,7 +66,8 @@ function notify(emailAddr, reason) {
 	var lastSent = 0;
 	try {
 		lastSent = fs.readFileSync(emailAddr);
-		lastSent = parseInt(lastSent.toString('ascii'));
+		lastSent = parseInt(lastSent.toString('ascii')); // this feels weird
+
 		console.log(lastSent)
 	} catch (e) {
 		// no file, so let's move on. probabaly the first send.
